@@ -98,29 +98,50 @@ python run_all.py
 ```text
 Product-Review-Sentiment-Analyzer/
 │
+├── experiments/
+│   └── sentiment_analysis_v2.py
+│
 ├── config.py
 ├── gui.py
-├── run_all.py
-│
+├── dataset.csv
+├── processed_data.csv
 ├── pipeline_1_preprocess.py
 ├── pipeline_2_eda.py
 ├── pipeline_3_train.py
 ├── pipeline_4_predict.py
-│
-├── dataset.csv
-├── processed_data.csv
-│
 ├── models.pkl
-├── vectorizer.pkl
 ├── labels.pkl
-├── tfidf_matrix.npz
-│
-├── confusion_matrix.png
-├── eda_plots.png
-│
+├── vectorizer.pkl
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
+## Experimental Implementation
+
+The repository also includes an experimental implementation of the sentiment analysis project in the `experiments/` directory.
+
+### `sentiment_analysis_v2.py`
+
+This standalone implementation explores an alternative approach to product review sentiment classification.
+
+**Features:**
+
+* Enhanced text preprocessing using POS-tagged lemmatization.
+* Negation word preservation during stopword removal.
+* TF-IDF feature extraction with unigram and bigram support.
+* Multiple machine learning classifiers:
+
+  * Logistic Regression
+  * Multinomial Naive Bayes
+  * Linear Support Vector Machine
+  * SGD Classifier
+* Hyperparameter tuning using GridSearchCV.
+* Soft Voting Ensemble.
+* Model evaluation using accuracy, precision, recall and F1-score.
+* Confusion matrix visualisation.
+* Interactive terminal-based sentiment prediction.
+
+**Note:** This is an experimental standalone implementation and is separate from the main modular application. The primary project workflow and GUI are maintained independently.
 
 ## 🚀 Future Improvements
 
